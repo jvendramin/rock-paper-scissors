@@ -2,12 +2,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <h1>1. Click Cancel</h1>
-    <h1>2. Right Click to Open Console, click 'Console' tab (Chrome Users)</h1>
-    <h1>3. Reload page</h1>
+    <div class="popup">
+        <button id="close">&times;</button>
+        <h3>Game Settings</h3>
+        <p>Select how many rounds you would like to play:</p>
+        <form class="roundSelector">
+            <input type="radio" id="roundOption" name="rounds-play" value=3>
+            <label for="3">3️⃣</label><br>
+            <input type="radio" id="roundOption" name="rounds-play" value=5>
+            <label for="5">5️⃣</label><br>
+            <input type="radio" id="roundOption" name="rounds-play" value=10>
+            <label for="10">🔟</label>
+        </form>
+        <button id="start">Start</button>
+    </div>
+    <h1>Test</h1>
+    <div class="button-container">
+        <button class="actionbutton" type="button">✊</button>
+        <button class="actionbutton" type="button">🫱</button>
+        <button class="actionbutton" type="button">✌️</button>
+    </div>
     <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>

@@ -1,0 +1,98 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(126, 125, 148);
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.actionbutton {
+    background-color: #232227;
+    border: 2px solid #565263;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 120px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.124), 0 6px 20px 0 rgba(0, 0, 0, 0.162);
+    margin: 10px;
+    text-align: center;
+}
+
+.popup{
+    background-color: #ffffff;
+    backdrop-filter: blur(15px);
+    width: 450px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins",sans-serif;
+    display: none;
+    text-align: center;
+    justify-content: center;
+}
+.popup button{
+    display: block;
+    margin:  0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #c5c5c5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.popup p{
+    font-size: 14px;
+    text-align: center;
+    margin: 20px 0;
+    line-height: 25px;
+}
+
+a {
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #0f72e5;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.popup #start{
+    font-size: 24px;
+    margin: auto;
+}
+
+.roundSelector {
+    display: flex;
+    flex-direction: row;
+    flex-flow: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-bottom: 40px;
+}
+
+input[type="radio"] {
+    margin-left: 40;
+    margin-right: 10;
+}

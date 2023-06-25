@@ -1,3 +1,20 @@
+window.addEventListener("load", function(){
+    setTimeout(
+        function open(event){
+            document.querySelector(".popup").style.display = "block";
+        },
+        1
+    )
+});
+
+document.querySelector("#close").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+});
+
+document.querySelector("#start").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+});
+
 // function to make computer choice
 function getComputerChoice() {
 
@@ -49,7 +66,7 @@ let roundResult;
 let scores;
 
 // initial prompt and game setup
-playerChoice = prompt("What's your choice?");
+// playerChoice = prompt("What's your choice?");
 console.log('ROUND 1');
 console.log('🗿 Rock...');
 console.log('📄 Paper...');
