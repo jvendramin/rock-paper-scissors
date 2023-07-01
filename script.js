@@ -7,7 +7,6 @@ let cscore = 0;
 let pscore = 0;
 let blurb;
 let insultChoice;
-let ip;
 let output = document.getElementById("output");
 let replay = document.getElementById("replay");
 actionbutton = document.getElementById("actionbutton");
@@ -57,12 +56,16 @@ function getComputerChoice() {
 // function to start the game
 function game() {
 
+    setTimeout(()=> {
+
     output.innerHTML = "~ Round: " + round + ' ~';
     document.getElementById("emojiButtons").style.display = "flex";
     
     // make computer choice and update screen
     compChoice = getComputerChoice()
     document.getElementById("actionbutton").style.display = "none";
+
+    },200)
 
 };
 
@@ -108,11 +111,6 @@ function playRound(comp,player) {
     return result;
 };
 
-// get user ip address to insult them more
-function getIP(json) {
-    ip = json.ip
-};
-
 //  for starting the confetti
 const startConfetti = () => {
     setTimeout(function() {
@@ -148,7 +146,7 @@ function reset(res) {
     document.getElementById("replay").style.display = "block";
     replay.innerHTML = scoreboard;
 
-    // delay for 3.5s and continue
+    // delay for 3s and continue
     setTimeout(()=> {
         //document.getElementById("replay").style.display = "none";
         document.getElementById("emojiButtons").style.display = "flex";
@@ -168,8 +166,7 @@ function insultPlayer() {
         "You're horrible at this",
         "I'm not even real...",
         "I'd hit restart if I were you",
-        "Quit while you're ahead...jk too late",
-        "RIP " + ip
+        "Quit while you're ahead...too late"
     ];
     insultChoice = insults[(Math.floor(Math.random() * insults.length))];
 

@@ -97,6 +97,7 @@ body {
     margin: 10px;
     text-align: center;
     transition: all .1s ease-in-out;
+    pointer-events: auto;
 }
 
 .playerbutton:hover {
@@ -180,7 +181,7 @@ input[type="radio"] {
 }
 
 table {
-    width: 100%;
+    width: auto;
 }
 
 td {
@@ -217,4 +218,25 @@ td {
 p {
     font-family: customFont;
     font-size: 48px;
+    width: 100%;
 }
+
+@media screen and (max-width: 600px) {  
+
+    .playerbutton {
+
+        font-size: 54px;
+        margin: 2px;
+        padding: 10px 24px;
+
+    }
+
+    .actionbutton {
+        font-size: 24px;
+    }
+
+    p {
+        font-family: customFont;
+        font-size: 20px;
+    }
+  }

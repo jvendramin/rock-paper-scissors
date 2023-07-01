@@ -3,12 +3,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <script type='text/javascript'>
+        $(document).ready(function () {
+        if ($("[rel=tooltip]").length) {
+        $("[rel=tooltip]").tooltip();
+        }
+      });
+     </script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
     <div class="button-container">
-        <div id="compoutput">
-            <table>
+        <div id="compoutput" style="overflow-x:auto;">
+            <table style="overflow-x:auto;">
                 <tr>
                     <td>
                         <p id="output">Rock Paper Scissors! 👾</p>
@@ -22,19 +29,18 @@
                 <tr>
                     <td>
                         <button class="actionbutton" id="actionbutton" type="button">Start Game</button>
+                        <div class="emojiButtons" id="emojiButtons">
+                            <button title="Rock" class="playerbutton" id="rock" type="button">✊</button>
+                            <button title="Paper" class="playerbutton" id="paper" type="button">🫱</button>
+                            <button title="Scissors" class="playerbutton" id="scissors" type="button">✌️</button>
+                        </div>
                     </td>
                 </tr>
             </table>
-        </div>
-        <div class="emojiButtons" id="emojiButtons">
-            <button class="playerbutton" id="rock" type="button">✊</button>
-            <button class="playerbutton" id="paper" type="button">🫱</button>
-            <button class="playerbutton" id="scissors" type="button">✌️</button>
         </div>
     </div>
     <button class="restart" onClick="window.location.reload();">Restart</button>
     <script src="script.js"></script>
     <script src="confetti.js"></script>
-    <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </body>
 </html>
