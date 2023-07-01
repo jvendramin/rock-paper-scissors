@@ -6,27 +6,33 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <div class="popup">
-        <button id="close">&times;</button>
-        <h3>Game Settings</h3>
-        <p>Select how many rounds you would like to play:</p>
-        <form class="roundSelector">
-            <input type="radio" id="roundOption" name="rounds-play" value=3>
-            <label for="3">3️⃣</label><br>
-            <input type="radio" id="roundOption" name="rounds-play" value=5>
-            <label for="5">5️⃣</label><br>
-            <input type="radio" id="roundOption" name="rounds-play" value=10>
-            <label for="10">🔟</label>
-        </form>
-        <button id="start">Start</button>
-    </div>
-    <h1>Test</h1>
     <div class="button-container">
-        <button class="actionbutton" type="button">✊</button>
-        <button class="actionbutton" type="button">🫱</button>
-        <button class="actionbutton" type="button">✌️</button>
+        <div id="compoutput">
+            <table>
+                <tr>
+                    <td>
+                        <p id="output">Rock Paper Scissors! 👾</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="replay"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="actionbutton" id="actionbutton" type="button">Start Game</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="emojiButtons" id="emojiButtons">
+            <button class="playerbutton" id="rock" type="button">✊</button>
+            <button class="playerbutton" id="paper" type="button">🫱</button>
+            <button class="playerbutton" id="scissors" type="button">✌️</button>
+        </div>
     </div>
+    <button class="restart" onClick="window.location.reload();">Restart</button>
     <script src="script.js"></script>
-    <!-- <script src="script.js"></script> -->
 </body>
 </html>

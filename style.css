@@ -6,20 +6,85 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: customFont;
+    src: url('Pixeboy-z8XGD.ttf');
+}
+
 body {
     background-color: rgb(126, 125, 148);
 }
 
 .button-container {
-    display: flex;
-    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
     flex-flow: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.button-container #compSelect {
+    margin-top: 80px;
+    background-color: #232227;
+    border: 2px solid #565263;
+    border-radius: 12px;
+    padding: 20px;
+    width: 40%;
+    height: 60%;
+}
+
+.emojiButtons {
+    display: none;
     height: 100%;
 }
 
 .actionbutton {
+    background-color: #232227;
+    border: 2px solid #565263;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: block;
+    font-size: 40px;
+    font-family: customFont;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.124), 0 6px 20px 0 rgba(0, 0, 0, 0.162);
+    margin: auto;
+    text-align: center;
+    transition: all .1s ease-in-out;
+}
+
+.actionbutton:hover {
+    background-color: #565263;
+    border: 2px solid #232227;
+    transform: scale(1.05);
+}
+
+.nextbutton {
+    background-color: #232227;
+    border: 2px solid #565263;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: none;
+    font-size: 48px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.124), 0 6px 20px 0 rgba(0, 0, 0, 0.162);
+    margin: 10px;
+    text-align: center;
+    transition: all .1s ease-in-out;
+}
+
+.nextbutton:hover {
+    background-color: #565263;
+    border: 2px solid #232227;
+    transform: scale(1.05);
+}
+
+.playerbutton {
     background-color: #232227;
     border: 2px solid #565263;
     color: white;
@@ -31,18 +96,27 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.124), 0 6px 20px 0 rgba(0, 0, 0, 0.162);
     margin: 10px;
     text-align: center;
+    transition: all .1s ease-in-out;
+}
+
+.playerbutton:hover {
+    background-color: #565263;
+    border: 2px solid #232227;
+    transform: scale(1.05);
 }
 
 .popup{
-    background-color: #ffffff;
+    background-color: #8debc717;
     backdrop-filter: blur(15px);
-    width: 450px;
-    padding: 30px 40px;
+    width: 650px;
+    height: auto;
+    padding: 40px 40px 100px 40px;
     position: absolute;
     transform: translate(-50%,-50%);
     left: 50%;
     top: 50%;
-    border-radius: 8px;
+    border-radius: 12px;
+    border: 2px solid #0e352644;
     font-family: "Poppins",sans-serif;
     display: none;
     text-align: center;
@@ -59,9 +133,10 @@ body {
     cursor: pointer;
 }
 .popup p{
-    font-size: 14px;
+    font-size: 24px;
     text-align: center;
-    margin: 20px 0;
+    margin-bottom: 20px;
+    margin-top: 10px;
     line-height: 25px;
 }
 
@@ -78,8 +153,13 @@ a {
 }
 
 .popup #start{
-    font-size: 24px;
+    color: #ffffff;
+    font-size: 32px;
     margin: auto;
+    background-color: #0f72e5;
+    padding: 4px 20px 4px 20px;
+    border-color: #185090;
+    border-radius: 12px;
 }
 
 .roundSelector {
@@ -90,9 +170,51 @@ a {
     justify-content: center;
     height: 100%;
     margin-bottom: 40px;
+    margin-right: 40px;
+    font-size: 32px;
 }
 
 input[type="radio"] {
     margin-left: 40;
     margin-right: 10;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    text-align: center;
+}
+
+.restart {
+
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+    background-color: #232227;
+    border: 2px solid #565263;
+    color: white;
+    padding: 10px 24px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: customFont;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.124), 0 6px 20px 0 rgba(0, 0, 0, 0.162);
+    text-align: center;
+    transition: all .1s ease-in-out;
+}
+
+.restart:hover {
+
+    background-color: #565263;
+    border: 2px solid #232227;
+    transform: scale(1.05);
+
+}
+
+p {
+    font-family: customFont;
+    font-size: 48px;
 }

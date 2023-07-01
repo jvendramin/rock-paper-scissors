@@ -1,142 +1,100 @@
-window.addEventListener("load", function(){
-    setTimeout(
-        function open(event){
-            document.querySelector(".popup").style.display = "block";
-        },
-        1
-    )
-});
+window.onload = myMain;
+let round = 1
+let result;
+let playerChoice;
+let compChoice;
+let cscore = 0;
+let pscore = 0;
+let output = document.getElementById("output");
+let replay = document.getElementById("replay");
+actionbutton = document.getElementById("actionbutton");
+actionbutton.addEventListener("click", game);
 
-document.querySelector("#close").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
-});
+function myMain() {
+    document.getElementById("emojiButtons").onclick = button;
+};
 
-document.querySelector("#start").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
-});
+// function decides what button user clicked
+function button(e) {
+
+    if (e.target.tagName == 'BUTTON') {
+
+        playerChoice = e.target.id;
+
+        result = playRound(compChoice,playerChoice);
+
+        output.innerHTML = result;
+        let roundResult = 'Computer Selected: ' + compChoice.toUpperCase() + ' & ' + 'Player Selected: ' + playerChoice.toUpperCase();
+        replay.innerHTML = roundResult;
+        document.getElementById("emojiButtons").style.display = "none";
+
+        reset();
+
+    };
+
+};
 
 // function to make computer choice
 function getComputerChoice() {
-
-    const options = ['ROCK','PAPER','SCISSORS'];
-    
+    const options = ['rock','paper','scissors'];
     return options[(Math.floor(Math.random() * options.length))];
 };
 
-// function to keep score and play round
-function playRound(player,pscore,cscore) {
+// function to start the game
+function game() {
 
-    let comp = getComputerChoice();
-    console.log('👀 Computer Choice: ' + comp);
-    
-    comp = comp.toLowerCase()
-    let result;
+    output.innerHTML = "Round" + round;
+    document.getElementById("emojiButtons").style.display = "flex";
+    compChoice = getComputerChoice()
+    output.innerHTML = "Computer has selected...";
+    document.getElementById("actionbutton").style.display = "none";
+
+};
+
+// function to play round, decide winner, update score
+function playRound(comp,player) {
 
     if (comp == 'rock' && player == 'scissors') {
-
         result = 'Computer Wins! 👎'
-        cscore = cscore + 1
+        cscore = cscore += 1
 
     } else if (comp == 'scissors' && player == 'paper') {
-
         result = 'Computer Wins! 👎'
-        cscore = cscore + 1
+        cscore = cscore += 1
 
     }  else if (comp == 'paper' && player == 'rock') {
-
         result = 'Computer Wins! 👎'
-        cscore = cscore + 1
+        cscore = cscore += 1
 
     } else if (comp == player) {
-
         result = 'Draw!'
 
     } else {
-
         result = 'Player Wins! 🎉'
-        pscore = pscore + 1
-    };
-    
-    return [result,pscore,cscore];
+        pscore = pscore += 1
+    }
+
+    return result;
 };
 
-let playerScore = 0;
-let compScore = 0;
-let roundResult;
-let scores;
+// print score, advance to next round, reset buttons
+function reset() {
 
-// initial prompt and game setup
-// playerChoice = prompt("What's your choice?");
-console.log('ROUND 1');
-console.log('🗿 Rock...');
-console.log('📄 Paper...');
-console.log('🗡️ Scissors!');
-console.log('=============================');
+    round += 1;
+    document.getElementById("replay").style.display = "block";
+    let scoreboard = 'Computer: ' + cscore + ' <> Player: ' + pscore;
+    replay.innerHTML = scoreboard;
 
-// round 1
-roundResult = playRound(playerChoice.toLowerCase(),playerScore,compScore);
-console.log('=============================');
-console.log(roundResult[0])
-console.log('=============================');
-playerScore = roundResult[1];
-compScore = roundResult[2];
-console.log('Player Score: ' + String(playerScore));
-console.log('Computer Score: ' + String(compScore));
-console.log('=============================');
+    // delay for 1.5s and continue
+    setTimeout(()=> {
+        document.getElementById("replay").style.display = "none";
+        document.getElementById("emojiButtons").style.display = "flex";
+        output.innerHTML = 'Round: ' + round;
+     },1500)
 
-// round 2
-console.log('ROUND 2');
-playerChoice = prompt("What's your choice?");
-roundResult = playRound(playerChoice.toLowerCase(),playerScore,compScore);
-console.log('=============================');
-console.log(roundResult[0])
-console.log('=============================');
-playerScore = roundResult[1];
-compScore = roundResult[2];
-console.log('Player Score: ' + String(playerScore));
-console.log('Computer Score: ' + String(compScore));
-console.log('=============================');
+    // delay for another 1.5s and start next round
+    setTimeout(()=> {
+        game()
+     },1500)
 
-// round 3
-console.log('ROUND 3');
-playerChoice = prompt("What's your choice?");
-roundResult = playRound(playerChoice.toLowerCase(),playerScore,compScore);
-console.log('=============================');
-console.log(roundResult[0])
-console.log('=============================');
-playerScore = roundResult[1];
-compScore = roundResult[2];
-console.log('Player Score: ' + String(playerScore));
-console.log('Computer Score: ' + String(compScore));
-console.log('=============================');
-
-// round 4
-console.log('ROUND 4');
-playerChoice = prompt("What's your choice?");
-roundResult = playRound(playerChoice.toLowerCase(),playerScore,compScore);
-console.log('=============================');
-console.log(roundResult[0])
-console.log('=============================');
-playerScore = roundResult[1];
-compScore = roundResult[2];
-console.log('Player Score: ' + String(playerScore));
-console.log('Computer Score: ' + String(compScore));
-console.log('=============================');
-
-// round 5
-console.log('ROUND 5');
-playerChoice = prompt("What's your choice?");
-roundResult = playRound(playerChoice.toLowerCase(),playerScore,compScore);
-console.log('=============================');
-console.log(roundResult[0])
-playerScore = roundResult[1];
-console.log('=============================');
-playerScore = roundResult[1];
-compScore = roundResult[2];
-console.log('Player Score: ' + String(playerScore));
-console.log('Computer Score: ' + String(compScore));
-console.log('=============================');
-
-// print final score
-console.log('FINAL SCORE... Player: ' + String(playerScore) + ' - Computer: ' + String(compScore));
-console.log('=============================');
+};
