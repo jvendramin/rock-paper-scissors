@@ -7,11 +7,20 @@ let cscore = 0;
 let pscore = 0;
 let blurb;
 let insultChoice;
+const sndtrack = new Audio("soundtrack.mp3");
+const loserSound = new Audio("loser.mp3");
+const winnerSound = new Audio("winner.mp3");
 let output = document.getElementById("output");
 let replay = document.getElementById("replay");
 actionbutton = document.getElementById("actionbutton");
 actionbutton.addEventListener("click", game);
 
+resetbutton = document.getElementById("reset");
+resetbutton.addEventListener("click", refreshPage);
+
+function refreshPage(){
+    window.location.reload();
+} 
 
 function myMain() {
     document.getElementById("emojiButtons").onclick = button;
@@ -26,8 +35,14 @@ function button(e) {
 
         result = playRound(compChoice,playerChoice);
 
+        if (result == 'Computer Wins! 👎') {
+
+            loserSound.play();
+        }
+
         if (result == 'Player Wins! 🎉') {
 
+            winnerSound.play();
             startConfetti();
             stopConfetti();
         }
@@ -55,6 +70,8 @@ function getComputerChoice() {
 
 // function to start the game
 function game() {
+
+    sndtrack.play();
 
     setTimeout(()=> {
 

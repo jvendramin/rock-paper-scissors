@@ -26,16 +26,6 @@ body {
     justify-content: space-between;
 }
 
-.button-container #compSelect {
-    margin-top: 80px;
-    background-color: #232227;
-    border: 2px solid #565263;
-    border-radius: 12px;
-    padding: 20px;
-    width: 40%;
-    height: 60%;
-}
-
 .emojiButtons {
     display: none;
     height: 100%;
@@ -106,82 +96,9 @@ body {
     transform: scale(1.05);
 }
 
-.popup{
-    background-color: #8debc717;
-    backdrop-filter: blur(15px);
-    width: 650px;
-    height: auto;
-    padding: 40px 40px 100px 40px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-    border-radius: 12px;
-    border: 2px solid #0e352644;
-    font-family: "Poppins",sans-serif;
-    display: none;
-    text-align: center;
-    justify-content: center;
-}
-.popup button{
-    display: block;
-    margin:  0 0 20px auto;
-    background-color: transparent;
-    font-size: 30px;
-    color: #c5c5c5;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-.popup p{
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    line-height: 25px;
-}
-
-a {
-    display: block;
-    width: 150px;
-    position: relative;
-    margin: 10px auto;
-    text-align: center;
-    background-color: #0f72e5;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 5px 0;
-}
-
-.popup #start{
-    color: #ffffff;
-    font-size: 32px;
-    margin: auto;
-    background-color: #0f72e5;
-    padding: 4px 20px 4px 20px;
-    border-color: #185090;
-    border-radius: 12px;
-}
-
-.roundSelector {
-    display: flex;
-    flex-direction: row;
-    flex-flow: center;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    margin-bottom: 40px;
-    margin-right: 40px;
-    font-size: 32px;
-}
-
-input[type="radio"] {
-    margin-left: 40;
-    margin-right: 10;
-}
-
 table {
     width: auto;
+    text-align: center;
 }
 
 td {
@@ -218,6 +135,25 @@ td {
 p {
     font-family: customFont;
     font-size: 48px;
+    width: 100%;
+}
+
+a {
+    font-family: customFont;
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 2%;
+    left: 0%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     width: 100%;
 }
 
