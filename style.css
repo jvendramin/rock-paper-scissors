@@ -177,14 +177,9 @@ footer {
     }
 
     footer {
-        position: absolute;
         bottom: 3%;
-        left: 4%;
-        font-size: 18px;
-        display: flex;
+        left: 3%;
         align-items: left;
         justify-content: left;
-        gap: 10px;
-        width: 100%;
     }
   }

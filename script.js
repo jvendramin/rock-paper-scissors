@@ -55,7 +55,7 @@ function button(e) {
 
         setTimeout(()=> {
             reset(result);
-         },2000)
+         },2000);
 
     };
 
